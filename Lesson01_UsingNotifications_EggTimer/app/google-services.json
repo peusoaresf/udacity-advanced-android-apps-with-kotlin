@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "595772347174",
+    "project_id": "udacity-fcm-notification-7bf52",
+    "storage_bucket": "udacity-fcm-notification-7bf52.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:595772347174:android:b297bbe38176347d5ca7e7",
+        "android_client_info": {
+          "package_name": "com.example.android.eggtimernotifications"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "595772347174-p8363f7msfd1e2h85of7ni92a0uk8m57.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDSUpeLKx8G2wvMRBPINPgI5gb0PP7kPZs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "595772347174-p8363f7msfd1e2h85of7ni92a0uk8m57.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -55,6 +55,13 @@ class EggTimerFragment : Fragment() {
             getString(R.string.egg_notification_channel_name)
         )
 
+        createChannel(
+            getString(R.string.breakfast_notification_channel_id),
+            getString(R.string.breakfast_notification_channel_name)
+        )
+
+        subscribeToTopic()
+
         return binding.root
     }
 
@@ -66,10 +73,11 @@ class EggTimerFragment : Fragment() {
         val notificationChannel = NotificationChannel(
             channelId,
             channelName,
-            NotificationManager.IMPORTANCE_LOW
+            NotificationManager.IMPORTANCE_HIGH
         ).apply {
             enableLights(true)
             enableVibration(true)
+            setShowBadge(false)
             lightColor = Color.RED
             description = "Time for breakfast"
         }
@@ -79,6 +87,17 @@ class EggTimerFragment : Fragment() {
         )
 
         notificationManager.createNotificationChannel(notificationChannel)
+    }
+
+    private fun subscribeToTopic() {
+        FirebaseMessaging.getInstance().subscribeToTopic(TOPIC)
+            .addOnCompleteListener { task ->
+                var msg = getString(R.string.message_subscribed)
+                if (!task.isSuccessful) {
+                    msg = getString(R.string.message_subscribe_failed)
+                }
+                Toast.makeText(context, msg, Toast.LENGTH_LONG).show()
+            }
     }
 
     companion object {
